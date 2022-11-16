@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		14AEF0E7C0A3A90A65BB12F4 /* Pods-VisitWebSdk_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitWebSdk_Example.release.xcconfig"; path = "Target Support Files/Pods-VisitWebSdk_Example/Pods-VisitWebSdk_Example.release.xcconfig"; sourceTree = "<group>"; };
 		47C2A088593A9B1357BB83A7 /* Pods-VisitWebSdk_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitWebSdk_Tests.release.xcconfig"; path = "Target Support Files/Pods-VisitWebSdk_Tests/Pods-VisitWebSdk_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		52CD235B3FB43AF8419F2DB7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		52CD235B3FB43AF8419F2DB7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* VisitWebSdk_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisitWebSdk_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,10 +41,10 @@
 		607FACE51AFB9204008FA782 /* VisitWebSdk_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisitWebSdk_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6E1BAECCCE4463C83665B690 /* VisitWebSdk.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = VisitWebSdk.podspec; path = ../VisitWebSdk.podspec; sourceTree = "<group>"; };
+		6E1BAECCCE4463C83665B690 /* VisitWebSdk.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VisitWebSdk.podspec; path = ../VisitWebSdk.podspec; sourceTree = "<group>"; };
 		77ADB0F6DF1593D8D2E66613 /* Pods-VisitWebSdk_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitWebSdk_Example.debug.xcconfig"; path = "Target Support Files/Pods-VisitWebSdk_Example/Pods-VisitWebSdk_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A31B242AB18A856C15B75FD5 /* Pods-VisitWebSdk_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisitWebSdk_Tests.debug.xcconfig"; path = "Target Support Files/Pods-VisitWebSdk_Tests/Pods-VisitWebSdk_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B5F2771CE404261CA2F61E9B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B5F2771CE404261CA2F61E9B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EF7CE9FE246567CE1C2FDF8D /* Pods_VisitWebSdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisitWebSdk_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C544449B1F0261C6E3A8FA /* Pods_VisitWebSdk_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisitWebSdk_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,7 +156,6 @@
 				A31B242AB18A856C15B75FD5 /* Pods-VisitWebSdk_Tests.debug.xcconfig */,
 				47C2A088593A9B1357BB83A7 /* Pods-VisitWebSdk_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,10 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = AU9UJ3DSGS;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = AU9UJ3DSGS;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -227,6 +228,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -478,7 +480,9 @@
 			baseConfigurationReference = 77ADB0F6DF1593D8D2E66613 /* Pods-VisitWebSdk_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AU9UJ3DSGS;
 				INFOPLIST_FILE = VisitWebSdk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -493,7 +497,9 @@
 			baseConfigurationReference = 14AEF0E7C0A3A90A65BB12F4 /* Pods-VisitWebSdk_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AU9UJ3DSGS;
 				INFOPLIST_FILE = VisitWebSdk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -507,6 +513,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A31B242AB18A856C15B75FD5 /* Pods-VisitWebSdk_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = AU9UJ3DSGS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -516,6 +523,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -529,11 +537,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 47C2A088593A9B1357BB83A7 /* Pods-VisitWebSdk_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = AU9UJ3DSGS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

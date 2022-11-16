@@ -1,0 +1,35 @@
+{
+  "name": "VisitWebSdk",
+  "version": "0.1.0",
+  "summary": "An SDK to inject the health kit data in Visit PWA",
+  "description": "An iOS SDK to inject the health kit data in Visit PWA",
+  "homepage": "https://github.com/VisitApp/VisitWebSdk",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "81799742": "yash-vardhan@hotmail.com"
+  },
+  "source": {
+    "git": "https://github.com/VisitApp/VisitWebSdk.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "source_files": "VisitWebSdk/Classes/**/*",
+  "public_header_files": "VisitWebSdk/Classes/**/*.h",
+  "resource_bundles": {
+    "VisitWebSdk": [
+      "VisitWebSdk/Assets/*.png",
+      "VisitWebSdk/Assets/*.storyboard"
+    ]
+  },
+  "pod_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "user_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  }
+}

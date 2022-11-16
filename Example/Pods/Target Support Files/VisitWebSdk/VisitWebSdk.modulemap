@@ -1,0 +1,6 @@
+framework module VisitWebSdk {
+  umbrella header "VisitWebSdk-umbrella.h"
+
+  export *
+  module * { export * }
+}

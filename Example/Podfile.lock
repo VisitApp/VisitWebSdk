@@ -1,0 +1,16 @@
+PODS:
+  - VisitWebSdk (0.1.0)
+
+DEPENDENCIES:
+  - VisitWebSdk (from `../`)
+
+EXTERNAL SOURCES:
+  VisitWebSdk:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  VisitWebSdk: 0ab2aed598f693bc6e19945aeeabb5cbaf758ccd
+
+PODFILE CHECKSUM: 011f841257136fcf5bddf6675f9faa00f1a671f5
+
+COCOAPODS: 1.11.3
