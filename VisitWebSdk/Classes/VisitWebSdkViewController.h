@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface VisitWebSdkViewController : WKWebView<WKScriptMessageHandler>{
     // Member variables go here.
@@ -16,6 +17,9 @@
     UIViewController * addDependentViewController;
     UIActivityIndicatorView *activityIndicator;
 }
+
+// Property to retain CLLocationManager
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 - (void) loadVisitWebUrl:(NSString*) magicLink;
 

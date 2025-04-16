@@ -6,6 +6,10 @@
 //
 
 #import "VisitWebSdkViewController.h"
+#import <CoreLocation/CoreLocation.h>
+
+@interface VisitWebSdkViewController () <CLLocationManagerDelegate>
+@end
 
 API_AVAILABLE(ios(13.0))
 @implementation VisitWebSdkViewController
@@ -142,6 +146,36 @@ API_AVAILABLE(ios(13.0))
     }];
 }
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusAuthorizedAlways) {
+        [self injectJavascript:@"window.checkTheGpsPermission(true);"];
+    } else if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Location Permission"
+                                                                       message:@"Location access is required. Please enable it in Settings."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:@"Open Settings"
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction *action) {
+            NSURL *settingsUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+            if ([[UIApplication sharedApplication] canOpenURL:settingsUrl]) {
+                [[UIApplication sharedApplication] openURL:settingsUrl options:@{} completionHandler:nil];
+            }
+        }];
+
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                               style:UIAlertActionStyleCancel
+                                                             handler:nil];
+
+        [alert addAction:cancelAction];
+        [alert addAction:settingsAction];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->currentTopVC presentViewController:alert animated:YES completion:nil];
+        });
+    }
+}
+
 - (void)userContentController:(nonnull WKUserContentController *)userContentController didReceiveScriptMessage:(nonnull WKScriptMessage *)message {
     NSData *data = [message.body dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -176,7 +210,7 @@ API_AVAILABLE(ios(13.0))
         mail = [mail stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         NSURL *url = [NSURL URLWithString:mail];
         if([[UIApplication sharedApplication] canOpenURL:url]){
-                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
         }else{
             NSLog(@"Cannot open url");
         }
@@ -187,7 +221,21 @@ API_AVAILABLE(ios(13.0))
     }else if([methodName isEqualToString:@"pendingHraUpdation"]){
         NSString *javascript = [NSString stringWithFormat:@"updateHraToAig()"];
         [self injectJavascript:javascript];
+    }else if([methodName isEqualToString:@"getLocationPermissions"]){
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+
+    if (!self.locationManager) {
+        self.locationManager = [[CLLocationManager alloc] init];
     }
+    
+    self.locationManager.delegate = self;
+
+    if (status == kCLAuthorizationStatusNotDetermined) {
+        [self.locationManager requestWhenInUseAuthorization];
+    } else {
+        [self locationManager:self.locationManager didChangeAuthorizationStatus:status];
+    }
+}
 }
 
 @end
